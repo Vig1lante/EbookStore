@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using InternetShop.Model;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,6 +17,9 @@ namespace InternetShop {
 
         public OrderStatus Status { get; set; }
 
-        public uint Price { get; set; }  
+        public uint Price { get; set; }
+
+        public ICollection<Orderlines> Orderlines { get; set; }
+
     }
 }

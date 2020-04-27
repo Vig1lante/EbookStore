@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using InternetShop.Model;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,8 +14,7 @@ namespace InternetShop {
         public string Description { get; set; }
         public int Discount { get; set; }
         public long Price { get; set; }
-
-        public virtual ICollection<Order> orders { get; set; }
+        public ICollection<Orderlines> Orderlines { get; set; }
 
     }
 }
