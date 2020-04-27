@@ -1,23 +1,36 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Text;
 
 namespace InternetShop.Model {
-    class DbEntities: DbContext {
+    class DbEntities : DbContext {
 
-        public DbEntities() {
-            Database.SetInitializer(new CreateDatabaseIfNotExists<DbEntities>);
-        }
+        //public DbEntities() => this.Database.EnsureCreated();
         public DbSet<Order> Order { get; set; }
         public DbSet<Product> Product { get; set; }
-        public DbSet<UserType> User { get; set; }
+        public DbSet<User> User { get; set; }
+
+        public DbEntities() {
+
+        this.Database.EnsureCreated();
+        }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Host=dumbo.db.elephantsql.com; " +
-                                        "Database=bntmllfq; Username=bntmllfq;" +
-                                        " Password=uI9CxYhBKT6XwvqV03iQLd6bY7tD7wH7");
+            => optionsBuilder.UseNpgsql("Host=vps796625.ovh.net; " +
+                                        "Database=bookstore; Username=dbuser;" +
+                                        " Password=asd123");
+
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+            modelBuilder.Entity<Order>()
+            .HasMany<Order>(o => o.Products)
+            .WithMany(p => p.Orders)
+            .Map(cs =>
+            {
+                cs.MapLeftKey("StudentRefId");
+                cs.MapRightKey("CourseRefId");
+                cs.ToTable("StudentCourse");
+            });
         }
     }
 }

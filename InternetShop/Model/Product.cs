@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternetShop {
-    class Product {
+    [Table("Products")]
+    public class Product {
         [Key]
         public string Isbn { get; set; }
         public string Title { get; set; }
@@ -13,6 +13,8 @@ namespace InternetShop {
         public string Description { get; set; }
         public int Discount { get; set; }
         public long Price { get; set; }
+
+        public virtual ICollection<Order> orders { get; set; }
 
     }
 }

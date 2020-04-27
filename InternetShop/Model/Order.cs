@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InternetShop {
-    class Order {
+    [Table("Orders")]
+    public class Order {
 
-        internal enum OrderStatus {
-            Active,
-            Processed,
-        }
+        public enum OrderStatus { Active, Processed }
+
         [Key]
-        public int Id { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public long Id { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
 
-        public UserType User { get; set; }
+        public User User { get; set; }
 
         public OrderStatus Status { get; set; }
 
