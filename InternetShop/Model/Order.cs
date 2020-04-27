@@ -11,15 +11,13 @@ namespace InternetShop {
 
         [Key]
         public long Id { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
-
         public User User { get; set; }
 
         public OrderStatus Status { get; set; }
 
         public uint Price { get; set; }
 
-        public ICollection<Orderlines> Orderlines { get; set; }
+        public ICollection<OrderLine> OrderLines { get; set; }
 
     }
 }

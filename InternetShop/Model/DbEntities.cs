@@ -8,7 +8,7 @@ namespace InternetShop.Model {
         public DbSet<Product> Product { get; set; }
         public DbSet<User> User { get; set; }
 
-        public DbSet<Orderlines> Orderlines { get; set; }
+        public DbSet<OrderLine> Orderlines { get; set; }
 
         public DbEntities() {
 

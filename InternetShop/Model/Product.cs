@@ -14,7 +14,7 @@ namespace InternetShop {
         public string Description { get; set; }
         public int Discount { get; set; }
         public long Price { get; set; }
-        public ICollection<Orderlines> Orderlines { get; set; }
+        public ICollection<OrderLine> OrderLines { get; set; }
 
     }
 }
