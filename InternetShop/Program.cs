@@ -11,11 +11,11 @@ namespace InternetShop {
 
             using (var ctx = new DbEntities()) {
                 var product = new Product();
-                product.Isbn = "asdf143";
-                product.Author = "Mike Tyson";
-                product.Description = "IT'S THE BETH";
-                product.Genre = "Alternative medicine";
-                product.Price = 34;
+                product.Isbn = "12";
+                product.Author = "vvvvvvvvvvvvvvvvvvvv";
+                product.Description = "ccccccccccccccc";
+                product.Genre = "ssssssssssssssssssss medicine";
+                product.Price = 324;
                 product.Title = "How to eat one's children";
                 product.Discount = 30;
                 ctx.Product.Add(product);

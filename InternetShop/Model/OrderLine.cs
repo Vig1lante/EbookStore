@@ -10,9 +10,11 @@ namespace InternetShop.Model {
 
         [Required]
         public Product Product { get; set; }
+        public string ProductId { get; set; }
 
         [Required]
         public Order Order { get; set; }
+        public long OrderId { get; set; }
 
     }
 }
