@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace InternetShop {
+namespace InternetShop.Model {
     [Table("Orders")]
     public class Order {
 
