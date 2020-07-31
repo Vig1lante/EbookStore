@@ -7,16 +7,16 @@ namespace InternetShop.Model {
 
     public class User {
         [Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string Surname { get; set; }
-        [Required]
         public string Email { get; set; }
-        [Required]
         public string Address { get; set; }
+        public string Password { get; set; }
+        //[Ignore field => dont need in db, only in memory]
+        [NotMapped]
+        public bool Anonymous { get; set; } = false; // Keep this for automatic ignore when registering a real user
         public ICollection<Order> Orders { get; set; } 
-
     }
 }
