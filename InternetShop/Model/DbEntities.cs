@@ -11,8 +11,6 @@ namespace InternetShop.Model {
         public DbEntities() => this.Database.EnsureCreated();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseNpgsql("Host=vps796625.ovh.net; " +
-                                        "Database=bookstore; Username=dbuser;" +
-                                        " Password=asd123");
+            => optionsBuilder.UseNpgsql();
     }
 }
